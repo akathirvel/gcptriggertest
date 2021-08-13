@@ -6,6 +6,9 @@ _OTHR=$3
 echo -e 'Source code location is $_SRC_REPO_URL'
 echo -e 'Branch  is $_BRANCH'
 echo -e '_OTHR is $_OTHR'
+echo $_SRC_REPO_URL
+echo $_BRANCH
+echo $_OTHR
 
 
 if (($(date '+%-e')%2)); then
