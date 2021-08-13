@@ -1,0 +1,6 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    args:
+      - '-c'
+      - ./scrpts/display_date.sh $_SRC_REPO_URL $_BRANCH $OTH
+    entrypoint: bash
