@@ -2,6 +2,9 @@ steps:
   - name: gcr.io/cloud-builders/gcloud
     entrypoint: bash
     args:
-      - ./scripts/display_date.sh   
+      - ./scripts/display_date.sh
+      - $_SRC_REPO_URL
+      - $_BRANCH
+      - $_OTHR 
 options:
   logging: CLOUD_LOGGING_ONLY    
