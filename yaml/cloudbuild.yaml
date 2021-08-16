@@ -1,16 +1,19 @@
 steps:
-  - name: gcr.io/cloud-builders/gcloud
+  - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: bash
     args:
       - ./scripts/display_date.sh
       - $_SRC_REPO_URL
       - $_BRANCH
       - $_OTHR 
-  - name: gcr.io/cloud-builders/git
+  - name: 'gcr.io/cloud-builders/git'
     secretEnv: ['SSH_KEY']
     entrypoint: 'bash'
     args:     
-      - ./scripts/0-checkout.sh $_SRC_REPO_URL $_BRANCH "$$SSH_KEY"
+      - ./scripts/0-checkout.sh
+      - $_SRC_REPO_URL
+      - $_BRANCH
+      - $$SSH_KEY
 availableSecrets:
     secretManager:
       - versionName: projects/1004695768282/secrets/ANGLES-SSH-KEY/versions/latest
