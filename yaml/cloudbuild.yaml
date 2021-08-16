@@ -10,7 +10,6 @@ steps:
     secretEnv: ['SSH_KEY']
     entrypoint: 'bash'
     args:
-      - '-c'
       - ./scripts/0-checkout.sh
       - $_SRC_REPO_URL
       - $_BRANCH
