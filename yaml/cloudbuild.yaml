@@ -6,7 +6,7 @@ steps:
       - $_SRC_REPO_URL
       - $_BRANCH
       - $_OTHR 
-  - name: 'gcr.io/cloud-builders/git'
+  - name: gcr.io/cloud-builders/git
     secretEnv: ['SSH_KEY']
     entrypoint: 'bash'
     args:
