@@ -12,9 +12,9 @@ steps:
     args:
       - '-c'
       - ./scrpts/0-checkout.sh $_SRC_REPO_URL $_BRANCH $$SSH_KEY
-  availableSecrets:
+availableSecrets:
     secretManager:
       - versionName: projects/1004695768282/secrets/ANGLES-SSH-KEY/versions/latest
         env: 'SSH_KEY'
 options:
-  logging: CLOUD_LOGGING_ONLY 
+  logging: CLOUD_LOGGING_ONLY
