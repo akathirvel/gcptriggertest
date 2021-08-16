@@ -14,7 +14,7 @@ steps:
       - ./scrpts/0-checkout.sh $_SRC_REPO_URL $_BRANCH $$SSH_KEY
 availableSecrets:
     secretManager:
-      - versionName: projects/1004695768282/secrets/ANGLES-SSH-KEY/versions/1
+      - versionName: projects/1004695768282/secrets/ANGLES-SSH-KEY/versions/latest
         env: 'SSH_KEY'
 options:
   logging: CLOUD_LOGGING_ONLY
