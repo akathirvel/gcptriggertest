@@ -9,12 +9,8 @@ steps:
   - name: gcr.io/cloud-builders/git
     secretEnv: ['SSH_KEY']
     entrypoint: 'bash'
-    args:
-      - echo "$$SSH_KEY"
-      - ./scripts/0-checkout.sh
-      - $_SRC_REPO_URL
-      - $_BRANCH
-      - $$SSH_KEY
+    args:     
+      - ./scripts/0-checkout.sh $_SRC_REPO_URL $_BRANCH "$$SSH_KEY"
 availableSecrets:
     secretManager:
       - versionName: projects/1004695768282/secrets/ANGLES-SSH-KEY/versions/latest
