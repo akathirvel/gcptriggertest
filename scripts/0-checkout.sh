@@ -4,7 +4,7 @@ _SRC_REPO_URL=$1
 _BRANCH=$2
 ssh_key=$3
 
-echo "Creating floder....."
+echo "Creating floder....."$ssh_key
 mkdir /root/.ssh
 echo "DONE Creating floder....."
 echo "$ssh_key" >> /root/.ssh/id_rsa
