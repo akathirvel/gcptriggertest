@@ -1,7 +1,7 @@
 #!/bin/bash
 
-REPO_NAME="REPO_NAME"
-BRANCH_NAME="master"
+REPO_NAME=$1
+BRANCH_NAME=$2
 SEPARATOR='__'
 
 cat /dev/null > /workspace/src/devops/secret-env
