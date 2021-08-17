@@ -32,4 +32,4 @@ fi
 if [[ -f "/workspace/src/devops/secret-env" ]]; then
   cat /workspace/src/devops/secret-env >> /workspace/src/devops/_docker-build-env
 fi
-echo -e "BRANCH=$1" >> /workspace/src/devops/_docker-build-env
+echo -e "BRANCH=$REPO_NAME" >> /workspace/src/devops/_docker-build-env
