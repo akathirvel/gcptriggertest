@@ -23,7 +23,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     entrypoint: 'bash'
     args:
-      - './build-deploy-firebase/2-build.sh'
+      - './scripts/2-build.sh'
       - $_BRANCH
 availableSecrets:
     secretManager:
