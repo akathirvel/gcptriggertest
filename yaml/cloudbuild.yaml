@@ -15,14 +15,14 @@ steps:
       - $_BRANCH
       - "ANGLES-SSH-KEY"
   - name: 'gcr.io/cloud-builders/gcloud'
-      entrypoint: 'bash'
-      args:
-        - './scripts/1-envi-load.sh'
-        - $_REPO
-        - $_BRANCH
+    entrypoint: 'bash'
+    args:
+    - './scripts/1-envi-load.sh'
+    - $_REPO
+    - $_BRANCH
   - name: 'gcr.io/cloud-builders/docker'
-      entrypoint: 'bash'
-      args:
+    entrypoint: 'bash'
+    args:
       - './build-deploy-firebase/2-build.sh'
       - $_BRANCH
 availableSecrets:
