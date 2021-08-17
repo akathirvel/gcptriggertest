@@ -16,9 +16,10 @@ steps:
       - "ANGLES-SSH-KEY"
   - name: 'gcr.io/cloud-builders/gcloud'
       entrypoint: 'bash'
-      - './scripts/1-envi-load.sh'
-      - $_REPO
-      - $_BRANCH
+      args:
+        - './scripts/1-envi-load.sh'
+        - $_REPO
+        - $_BRANCH
   - name: 'gcr.io/cloud-builders/docker'
       entrypoint: 'bash'
       args:
