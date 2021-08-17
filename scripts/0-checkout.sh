@@ -6,8 +6,12 @@ ssh_key=$3
 
 echo "Creating floder....."$ssh_key
 mkdir /root/.ssh
+
+REPO_SECRETS=$(gcloud secrets versions access latest --secret="$ssh_key")
+echo $REPO_SECRETS
+
 echo "DONE Creating floder....."
-echo "$ssh_key" >> /root/.ssh/id_rsa
+echo "$REPO_SECRETS" >> /root/.ssh/id_rsa
 less /root/.ssh/id_rsa
 chmod 400 /root/.ssh/id_rsa
 ssh-keyscan github.com > /root/.ssh/known_hosts
