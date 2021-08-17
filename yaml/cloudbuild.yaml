@@ -14,6 +14,16 @@ steps:
       - $_SRC_REPO_URL
       - $_BRANCH
       - "ANGLES-SSH-KEY"
+  - name: 'gcr.io/cloud-builders/gcloud'
+      entrypoint: 'bash'
+      - './scripts/1-envi-load.sh'
+      - $_REPO
+      - $_BRANCH
+  - name: 'gcr.io/cloud-builders/docker'
+      entrypoint: 'bash'
+      args:
+      - './build-deploy-firebase/2-build.sh'
+      - $_BRANCH
 availableSecrets:
     secretManager:
       - versionName: projects/1004695768282/secrets/ANGLES-SSH-KEY/versions/latest
