@@ -5,7 +5,7 @@ steps:
       - ./scripts/display_date.sh
       - $_SRC_REPO_URL
       - $_BRANCH
-      - $_OTHR 
+      - $_REPO
   - name: 'gcr.io/cloud-builders/git'
     secretEnv: ['SSH_KEY']
     entrypoint: 'bash'
