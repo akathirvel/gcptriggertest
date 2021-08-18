@@ -7,4 +7,4 @@ echo "---"
 REPO2=${REPO,,}
 BRANCH2=${BRANCH,,}
 docker build -t gcr.io/nextjsproject/$REPO2-$BRANCH2 -f $DOCKERFILE /workspace/src
-docker push gcr.io/NextJsProject/$REPO2-$BRANCH2
+docker push gcr.io/nextjsproject/$REPO2-$BRANCH2
