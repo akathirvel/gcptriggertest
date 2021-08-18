@@ -6,5 +6,5 @@ echo -e "building branch $BRANCH with env vars:\n$(cat /workspace/src/devops/_do
 echo "---"
 REPO2=${REPO,,}
 BRANCH2=${BRANCH,,}
-docker build -t gcr.io/NextJsProject/$REPO2-$BRANCH2 -f $DOCKERFILE /workspace/src
+docker build -t gcr.io/nextjsproject/$REPO2-$BRANCH2 -f $DOCKERFILE /workspace/src
 docker push gcr.io/NextJsProject/$REPO2-$BRANCH2
