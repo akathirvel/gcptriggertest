@@ -24,13 +24,7 @@ steps:
     entrypoint: 'bash'
     args:
       - './scripts/2-build.sh'
-      - $_BRANCH
-  - name: 'gcr.io/cloud-builders/docker'
-    entrypoint: 'bash'
-    args:
-      - './scripts/2-1-couldrun_build.sh'
-      - $_REPO
-      - $_BRANCH
+      - $_BRANCH  
 availableSecrets:
     secretManager:
       - versionName: projects/1004695768282/secrets/ANGLES-SSH-KEY/versions/latest
