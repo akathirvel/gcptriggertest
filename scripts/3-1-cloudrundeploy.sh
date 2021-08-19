@@ -2,8 +2,8 @@ REPO_NAME=$1
 BRANCH_NAME=$2
 
 
-REPO2=${REPO,,}
-BRANCH2=${BRANCH,,}
+REPO2=${REPO_NAME,,}
+BRANCH2=${BRANCH_NAME,,}
 
 echo "deploying into CLOUD RUN"
 
