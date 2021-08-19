@@ -8,7 +8,3 @@ REPO2=${REPO,,}
 BRANCH2=${BRANCH,,}
 docker build -t gcr.io/nextjsproject-7b9be/$REPO2-$BRANCH2 -f $DOCKERFILE /workspace/src
 docker push gcr.io/nextjsproject-7b9be/$REPO2-$BRANCH2
-
-gcloud run deploy $REPO2-$BRANCH2 --image gcr.io/nextjsproject-7b9be/$REPO2-$BRANCH2  --region=us-central1  --allow-unauthenticated
-
-gcloud beta run services add-iam-policy-binding --region=us-central1 --member=allUsers --role=roles/run.invoker $REPO2-$BRANCH2
