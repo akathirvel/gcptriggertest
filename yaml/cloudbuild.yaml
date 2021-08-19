@@ -20,17 +20,23 @@ steps:
     - './scripts/1-envi-load.sh'
     - $_REPO
     - $_BRANCH
-  - name: 'gcr.io/cloud-builders/docker'
-    entrypoint: 'bash'
-    args:
-      - './scripts/2-build.sh'
-      - $_BRANCH
+#  - name: 'gcr.io/cloud-builders/docker'
+#    entrypoint: 'bash'
+#    args:
+#      - './scripts/2-build.sh'
+#      - $_BRANCH
   - name: 'gcr.io/cloud-builders/docker'
     entrypoint: 'bash'
     args:
       - './scripts/2-1-couldrun_build.sh'
       - $_REPO
       - $_BRANCH
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+    - './scripts/3-1-cloudrundeploy.sh'
+    - $_REPO
+    - $_BRANCH
 availableSecrets:
     secretManager:
       - versionName: projects/1004695768282/secrets/ANGLES-SSH-KEY/versions/latest
