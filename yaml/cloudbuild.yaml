@@ -1,11 +1,4 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: bash
-    args:
-      - ./scripts/display_date.sh
-      - $_SRC_REPO_URL
-      - $_BRANCH
-      - $_REPO
   - name: 'gcr.io/cloud-builders/git'
     secretEnv: ['SSH_KEY']
     entrypoint: 'bash'
@@ -20,24 +13,18 @@ steps:
     - './scripts/1-envi-load.sh'
     - $_REPO
     - $_BRANCH
-#  - name: 'gcr.io/cloud-builders/docker'
-#    entrypoint: 'bash'
-#    args:
-#      - './scripts/2-build.sh'
-#      - $_BRANCH
   - name: 'gcr.io/cloud-builders/docker'
     entrypoint: 'bash'
     args:
-      - './scripts/2-1-couldrun_build.sh'
-      - $_REPO
+      - './scripts/2-build.sh'
       - $_BRANCH
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: 'bash'
+  - name: 'gcr.io/nextjsproject-7b9be/firebase'
+    entrypoint: bash
     args:
-    - './scripts/3-1-cloudrundeploy.sh'
-    - $_REPO
-    - $_BRANCH
-availableSecrets:
+      - '-c'
+      - ./scripts/3-deploy.sh
+      - $_BRANCH
+ availableSecrets:
     secretManager:
       - versionName: projects/1004695768282/secrets/ANGLES-SSH-KEY/versions/latest
         env: 'SSH_KEY'
