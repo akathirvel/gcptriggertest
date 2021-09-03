@@ -21,7 +21,6 @@ steps:
   - name: 'gcr.io/nextjsproject-7b9be/firebase'
     entrypoint: bash
     args:
-      - '-c'
       - ./scripts/3-deploy.sh
       - $_BRANCH
  availableSecrets:
