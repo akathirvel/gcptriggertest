@@ -23,7 +23,7 @@ steps:
     args:
       - ./scripts/3-deploy.sh
       - $_BRANCH
- availableSecrets:
+availableSecrets:
     secretManager:
       - versionName: projects/1004695768282/secrets/ANGLES-SSH-KEY/versions/latest
         env: 'SSH_KEY'
